@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SnowFlake</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <script src="javascripts/jquery.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
+</head>
+<body ng-app="MainApp" ng-controller="MainController">
+  <div class="container">
+<!--     <div class="row col-md-12">
+      <form class="form-group" style="border : 1px solid green; padding : 10px; margin-top : 50px; border-radius : 3px;" ng-submit="saveUserData(details)">
+        <label>Name :</label>
+        <input type="text" class="form-control" ng-model="details.name" ng-required="true">
+        <button class="btn btn-info">Save</button>
+      </form>
+    </div> -->
+    <div class="row col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" datatable="ng" dt-options="vm.dtOptions" dt-instance="vm.dtInstance"  width="100%" ng-init="getUserData()">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>AGENT_Name</th>
+                </tr>
+              </thead>
+              <tbody ng-repeat="users in userdata">
+                <td>{{$index+1}}</td>
+                <td ng-hide="info">
+                  <span ng-bind="users.AGENT_NAME"></span>
+                </td>
+              </tbody>
+            </table>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+  <script src="javascripts/angular.min.js"></script>
+  <script src="javascripts/angular.js"></script>
+</html>
