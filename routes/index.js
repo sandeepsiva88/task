@@ -54,20 +54,20 @@ router.get('/getuserdata', function(req,res){
     }
   });
 });
-//Insert user data
-// router.post('/insertuserdata', function(req,res){
-//   // console.log(req.body)
-//   connection.execute({
-//     sqlText: "INSERT INTO Agent(agent_name) values ('"+req.body.name+"')",
-//     complete: function(err, stmt, rows) {
-//       if (err) {
-//         console.error('Failed to execute statement due to the following error: ' + err.message);
-//         res.sendStatus(500)
-//       } else {
-//         console.log(rows);
-//         res.sendStatus(200)
-//       }
-//     }
-//   });
-// });
+Insert user data
+router.post('/insertuserdata', function(req,res){
+  // console.log(req.body)
+  connection.execute({
+    sqlText: "INSERT INTO Agent(agent_name) values ('"+req.body.name+"')",
+    complete: function(err, stmt, rows) {
+      if (err) {
+        console.error('Failed to execute statement due to the following error: ' + err.message);
+        res.sendStatus(500)
+      } else {
+        console.log(rows);
+        res.sendStatus(200)
+      }
+    }
+  });
+});
 module.exports = router;

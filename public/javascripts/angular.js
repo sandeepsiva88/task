@@ -13,17 +13,17 @@ app.controller("MainController", function($scope,$http)  {
       alert('Error Occured!')
     })
   }
-  // // POST
-  // $scope.saveUserData = function (details) {
-  //   $scope.userdata.push(details);
-  //   $http({
-  //     method : 'POST',
-  //     url : '/insertuserdata',
-  //     data : details
-  //   }).then(function success(response){
-  //     $scope.details = {};
-  //   }, function error(response){
-  //     alert('Error Occured!')
-  //   })
-  // }
+  // POST
+  $scope.saveUserData = function (details) {
+    $scope.userdata.push(details);
+    $http({
+      method : 'POST',
+      url : '/insertuserdata',
+      data : details
+    }).then(function success(response){
+      $scope.details = {};
+    }, function error(response){
+      alert('Error Occured!')
+    })
+  }
 });
